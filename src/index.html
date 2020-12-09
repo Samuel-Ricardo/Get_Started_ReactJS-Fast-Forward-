@@ -26,16 +26,16 @@
 
             function MyComponent(){
 
-                //React.CreateElement(element // function name, {Properties}, Children)
+                //React.createElement(element // function name, {Properties}, Children)
 
-               return React.CreateElement('div',null,'Hello world!!!')
+               return React.createElement('div',null,'Hello world!!!')
             }
             
             //ReactDOM.render(element, place where it will render the elements)
 
             ReactDOM.render(
 
-                React.CreateElement(MyComponent),
+                React.createElement(MyComponent),
                 document.getElementById('app')
 
             )
