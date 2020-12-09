@@ -28,7 +28,7 @@
 
                 return (
 
-                    React.createElement('div', null,
+                    React.createElement('div', {className: 'component-1'},
                         React.createElement(MyComponent2))
                 ) 
             }
@@ -37,7 +37,7 @@
 
                 return (
                     
-                    React.createElement('div', null,
+                    React.createElement('div', {className: 'component-2'},
                         React.createElement(MyComponent3))
                 ) 
             }
@@ -46,7 +46,7 @@
 
                 return (
                     
-                    React.createElement('div', null,
+                    React.createElement('div', {className: 'component-3'},
                         React.createElement(MyComponent4))
                 ) 
             }
@@ -55,7 +55,7 @@
 
                 return (
                     
-                    React.createElement('div', null,
+                    React.createElement('div', {className: 'component-4'},
                        React.createElement('p',null,"Hello World :)"))
                 ) 
             }
@@ -68,7 +68,7 @@
 
                return ( 
                    
-                    React.createElement('div', null,
+                    React.createElement('div', {id: 'components'},
                         React.createElement(MyComponent1))
                 )
             }
