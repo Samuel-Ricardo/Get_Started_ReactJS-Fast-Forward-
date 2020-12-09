@@ -33,37 +33,43 @@
 
             function MyComponent1(){
 
-                return (
-
-                    React.createElement('div', {className: 'component-1'},
-                        React.createElement(MyComponent2))
-                ) 
-            }
-
-            function MyComponent2(){
-
-                return (
-                    
-                    React.createElement('div', {className: 'component-2'},
-                        React.createElement(MyComponent3))
-                ) 
-            }
-
-            function MyComponent3(){
-
                 const myName = 'Ayrton'
                 const myAge = '16'
 
                 return (
-                    
-                    React.createElement('div', {className: 'component-3'},
-                        React.createElement(MyComponent4, {
+
+                    React.createElement('div', {className: 'component-1'},
+                        React.createElement(MyComponent2, {
                             
-                            name: myName,
+                             name: myName,
                              age: myAge
                             
                             }
                         )
+                    )
+                ) 
+            }
+
+            function MyComponent2(props){
+
+                return (
+                    
+                    React.createElement('div', {className: 'component-2'},
+                        React.createElement(MyComponent3,{
+                                name: props.name,
+                                age: props.age
+                            }
+                        )
+                    )
+                ) 
+            }
+
+            function MyComponent3(props){
+
+                return (
+                    
+                    React.createElement('div', {className: 'component-3'},
+                        React.createElement(MyComponent4, props)
                     )
                 ) 
             }
