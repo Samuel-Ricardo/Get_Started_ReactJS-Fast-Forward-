@@ -23,20 +23,15 @@
                 const myName = 'Ayrton '
 
                 return (
-
-                    React.createElement(contextData.Provider, {
-                        
-                        value: {
-                                name: myName,
-                                age: 16
-                            }
-                        },
-
-                        React.createElement('div', {className: 'component-1'},
-
-                            React.createElement(MyComponent2)
-                        )
-                    )
+                    
+                    <nameContext.Provider value = {{
+                        name: myName,
+                        age: 16
+                    }}>
+                        <div className="component-1">
+                            <MyComponent2/>
+                        </div>
+                    </nameContext.Provider>
                 ) 
             }
 
