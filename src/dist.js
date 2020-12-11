@@ -36,12 +36,9 @@ function MyComponent4() {
   return (
     /*#__PURE__*/
     // JS code run into { }
-    React.createElement(contextData.Consumer, null, nameContext => {
-      /*#__PURE__*/
-      React.createElement("div", {
-        className: "component-4"
-      }, /*#__PURE__*/React.createElement("p", null, "nome \xE9: ", nameContext.name, " minha idade \xE9: ", nameContext.age));
-    })
+    React.createElement(contextData.Consumer, null, nameContext => /*#__PURE__*/React.createElement("div", {
+      className: "component-4"
+    }, /*#__PURE__*/React.createElement("p", null, "nome \xE9: ", nameContext.name, " minha idade \xE9: ", nameContext.age)))
   );
 }
 
