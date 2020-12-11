@@ -29,17 +29,25 @@
                         age: 16
                     }}>
                         <div className="component-1">
-                            <MyComponent2/>
+                            <MyComponent2>
+                                <p>Paragrafo do componente 2</p>
+                            </MyComponent2>
                         </div>
                     </contextData.Provider>
                 ) 
             }
 
-            function MyComponent2(){
+            function MyComponent2(props){
 
                 return (
 
                     <div className="component-2">
+                        <header>
+                            {props.children}
+                        </header>
+                        <footer>
+                            
+                        </footer>
                         <MyComponent3/>
                     </div>
                 ) 
