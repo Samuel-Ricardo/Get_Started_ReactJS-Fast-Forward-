@@ -85,13 +85,20 @@
                     React.createElement('div', {id: 'components'},
                         React.createElement(MyComponent1))
                 )
+
+                return(
+
+                    <div>
+                        <MyComponent1/>
+                    </div>
+                )
             }
             
             //ReactDOM.render(element, place where it will render the elements)
 
             ReactDOM.render(
 
-                React.createElement(MyComponent),
+                <MyComponent/>,
                     document.getElementById('app')
 
             )
