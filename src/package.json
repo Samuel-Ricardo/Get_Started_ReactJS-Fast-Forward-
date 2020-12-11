@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Samuel-Ricardo/Get_Started_ReactJS-Fast-Forward-/issues"
   },
-  "homepage": "https://github.com/Samuel-Ricardo/Get_Started_ReactJS-Fast-Forward-#readme"
+  "homepage": "https://github.com/Samuel-Ricardo/Get_Started_ReactJS-Fast-Forward-#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-react": "^7.12.10"
+  }
 }
