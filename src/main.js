@@ -52,7 +52,13 @@
 
             function MyComponent3(){
 
-                return (
+                return 
+                
+                <div className="component-3">
+                    <MyComponent4/>
+                </div>
+
+                (
                     
                     React.createElement('div', {className: 'component-3'},
                         React.createElement(MyComponent4)
