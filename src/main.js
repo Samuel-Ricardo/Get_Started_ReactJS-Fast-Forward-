@@ -61,19 +61,6 @@
             }
 
             function MyComponent4(){
-
-                return (
-                    
-                    React.createElement(contextData.Consumer, null, 
-                    
-                        (nameContext) => (
-
-                            React.createElement('div', {className: 'component-4'},
-                             React.createElement('p',null,"nome é: "+nameContext.name+" minha idade é: "+nameContext.age))
-
-                        )
-                    )
-                )
                 
                 return(
 // JS code run into { }
@@ -81,7 +68,7 @@
                         {
                             (nameContext) =>{
                                 <div className="component-4">
-                                    <p>{nameContext}</p>
+                                    <p>nome é: {nameContext.name} minha idade é: {nameContext.age}</p>
                                 </div>
                             }
                         }
