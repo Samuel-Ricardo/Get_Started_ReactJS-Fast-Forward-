@@ -43,10 +43,11 @@
             function MyComponent2(){
 
                 return (
-                    
-                    React.createElement('div', {className: 'component-2'},
-                        React.createElement(MyComponent3)
-                    )
+
+                    <div className="component-2">
+                        <MyComponent3/>
+                    </div>
+
                 ) 
             }
 
