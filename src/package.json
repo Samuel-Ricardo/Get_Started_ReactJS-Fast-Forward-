@@ -1,0 +1,19 @@
+{
+  "name": "get-started-reactjs",
+  "version": "1.0.0",
+  "description": "Get Started",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samuel-Ricardo/Get_Started_ReactJS-Fast-Forward-.git"
+  },
+  "author": "Samuel-Ricardo-Cabral-De-Barros",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Samuel-Ricardo/Get_Started_ReactJS-Fast-Forward-/issues"
+  },
+  "homepage": "https://github.com/Samuel-Ricardo/Get_Started_ReactJS-Fast-Forward-#readme"
+}
