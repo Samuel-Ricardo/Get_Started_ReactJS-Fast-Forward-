@@ -58,12 +58,6 @@
                     <MyComponent4/>
                 </div>
 
-                (
-                    
-                    React.createElement('div', {className: 'component-3'},
-                        React.createElement(MyComponent4)
-                    )
-                ) 
             }
 
             function MyComponent4(){
