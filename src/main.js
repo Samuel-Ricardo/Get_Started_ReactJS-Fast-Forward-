@@ -9,6 +9,8 @@
 
             //  Context API - we can break the flow and send data from any parent to any child or the other way around, and we don't need to go through all the parent's components until we reach the final children for example  //  API de contexto - podemos interromper o fluxo e enviar dados de qualquer pai para qualquer filho ou vice-versa, e não precisamos passar por todos os componentes do pai até chegarmos aos filhos finais, por exemplo
 
+            // JSX - is a syntax for JS with React similar to HTML
+            // JSX - é uma sintaxe para JS com React semelhante ao HTML
 
 
             const contextData = React.createContext('name')
@@ -71,7 +73,21 @@
 
                         )
                     )
-                ) 
+                )
+                
+                return(
+// JS code run into { }
+                    <contextData.Consumer>
+                        {
+                            (nameContext) =>{
+                                <div className="component-4">
+                                    <p>{nameContext}</p>
+                                </div>
+                            }
+                        }
+                    </contextData.Consumer>
+
+                )
             }
 
             function MyComponent(){
@@ -80,15 +96,9 @@
 
                //return React.createElement('div',null,'Hello world!!!')
 
-               return ( 
-                   
-                    React.createElement('div', {id: 'components'},
-                        React.createElement(MyComponent1))
-                )
-
                 return(
 
-                    <div>
+                    <div id="components">
                         <MyComponent1/>
                     </div>
                 )
@@ -101,4 +111,4 @@
                 <MyComponent/>,
                     document.getElementById('app')
 
-            )
+            )            
