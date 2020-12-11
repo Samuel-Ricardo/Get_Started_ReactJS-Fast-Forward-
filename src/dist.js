@@ -27,10 +27,7 @@ function MyComponent2() {
 }
 
 function MyComponent3() {
-  return;
-
-  /*#__PURE__*/
-  React.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "component-3"
   }, /*#__PURE__*/React.createElement(MyComponent4, null));
 }

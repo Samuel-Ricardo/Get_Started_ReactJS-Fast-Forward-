@@ -47,12 +47,12 @@
 
             function MyComponent3(){
 
-                return 
+                return (
                 
-                <div className="component-3">
-                    <MyComponent4/>
-                </div>
-
+                    <div className="component-3">
+                        <MyComponent4/>
+                    </div>
+                )
             }
 
             function MyComponent4(){
