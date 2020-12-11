@@ -47,7 +47,6 @@
                     <div className="component-2">
                         <MyComponent3/>
                     </div>
-
                 ) 
             }
 
