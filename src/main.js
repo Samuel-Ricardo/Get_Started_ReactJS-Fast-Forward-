@@ -23,15 +23,15 @@
                 const myName = 'Ayrton '
 
                 return (
-                    
-                    <nameContext.Provider value = {{
+
+                    <contextData.Provider value = {{
                         name: myName,
                         age: 16
                     }}>
                         <div className="component-1">
                             <MyComponent2/>
                         </div>
-                    </nameContext.Provider>
+                    </contextData.Provider>
                 ) 
             }
 

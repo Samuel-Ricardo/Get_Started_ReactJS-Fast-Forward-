@@ -10,7 +10,7 @@ const contextData = React.createContext('name'); // React.createElement(contextN
 
 function MyComponent1() {
   const myName = 'Ayrton ';
-  return /*#__PURE__*/React.createElement(nameContext.Provider, {
+  return /*#__PURE__*/React.createElement(contextData.Provider, {
     value: {
       name: myName,
       age: 16
