@@ -34,6 +34,21 @@
             //  Context API - we can break the flow and send data from any parent to any child or the other way around, and we don't need to go through all the parent's components until we reach the final children for example  //  API de contexto - podemos interromper o fluxo e enviar dados de qualquer pai para qualquer filho ou vice-versa, e não precisamos passar por todos os componentes do pai até chegarmos aos filhos finais, por exemplo
 
 
+/*
+
+React.createElement(contextData.Provider, {
+                        
+                        value: {
+                                name: myName,
+                                age: 16
+                            }
+                        },
+
+*/
+
+
+
+
             const contextData = React.createContext('name')
 
             // React.createElement(contextName.Provider) - Who Provide Data
@@ -45,13 +60,7 @@
 
                 return (
 
-                    React.createElement(contextData.Provider, {
-                        
-                        value: {
-                                name: myName,
-                                age: 16
-                            }
-                        },
+                    React.createElement(contextData.Provider, {value: myName},
 
                         React.createElement('div', {className: 'component-1'},
 
@@ -93,14 +102,21 @@
 
             function MyComponent4(properties){
 
-                const name = properties.name
+               // const name = properties.name
 
-                const age = properties.age
+               // const age = properties.age
 
                 return (
                     
-                    React.createElement('div', {className: 'component-4'},
-                       React.createElement('p',null,"Hello World :) Meu nome é: "+name+" minha idade é: "+age))
+                    React.createElement(contextData.Consumer, null, 
+                    
+                        (nameContext) =>(
+
+                            React.createElement('div', {className: 'component-4'},
+                             React.createElement('p',null,"nome é: "+nameContext+" minha idade é: "+16))
+
+                        )
+                    )
                 ) 
             }
 
