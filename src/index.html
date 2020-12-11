@@ -56,7 +56,7 @@ React.createElement(contextData.Provider, {
 
             function MyComponent1(){
 
-                const myName = 'Ayrton'
+                const myName = 'Ayrton '
 
                 return (
 
@@ -76,41 +76,33 @@ React.createElement(contextData.Provider, {
                 ) 
             }
 
-            function MyComponent2(props){
+            function MyComponent2(){
 
                 return (
                     
                     React.createElement('div', {className: 'component-2'},
-                        React.createElement(MyComponent3,{
-                                name: props.name,
-                                age: props.age
-                            }
-                        )
+                        React.createElement(MyComponent3)
                     )
                 ) 
             }
 
-            function MyComponent3(props){
+            function MyComponent3(){
 
                 return (
                     
                     React.createElement('div', {className: 'component-3'},
-                        React.createElement(MyComponent4, props)
+                        React.createElement(MyComponent4)
                     )
                 ) 
             }
 
-            function MyComponent4(properties){
-
-               // const name = properties.name
-
-               // const age = properties.age
+            function MyComponent4(){
 
                 return (
                     
                     React.createElement(contextData.Consumer, null, 
                     
-                        (nameContext) =>(
+                        (nameContext) => (
 
                             React.createElement('div', {className: 'component-4'},
                              React.createElement('p',null,"nome é: "+nameContext+" minha idade é: "+16))
