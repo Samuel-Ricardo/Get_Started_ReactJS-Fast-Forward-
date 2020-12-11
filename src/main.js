@@ -61,11 +61,11 @@
 // JS code run into { }
                     <contextData.Consumer>
                         {
-                            (nameContext) =>{
+                            (nameContext) =>(
                                 <div className="component-4">
                                     <p>nome é: {nameContext.name} minha idade é: {nameContext.age}</p>
                                 </div>
-                            }
+                            )
                         }
                     </contextData.Consumer>
 
