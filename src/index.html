@@ -35,14 +35,9 @@
 
 
 /*
+React.createElement(contextData.Provider, {value: myName},
 
-React.createElement(contextData.Provider, {
-                        
-                        value: {
-                                name: myName,
-                                age: 16
-                            }
-                        },
+
 
 */
 
@@ -60,17 +55,17 @@ React.createElement(contextData.Provider, {
 
                 return (
 
-                    React.createElement(contextData.Provider, {value: myName},
+                    React.createElement(contextData.Provider, {
+                        
+                        value: {
+                                name: myName,
+                                age: 16
+                            }
+                        },
 
                         React.createElement('div', {className: 'component-1'},
 
-                            React.createElement(MyComponent2, {
-                                
-                                name: myName,
-                                age: 16
-                                
-                                }
-                            )
+                            React.createElement(MyComponent2)
                         )
                     )
                 ) 
@@ -105,7 +100,7 @@ React.createElement(contextData.Provider, {
                         (nameContext) => (
 
                             React.createElement('div', {className: 'component-4'},
-                             React.createElement('p',null,"nome é: "+nameContext+" minha idade é: "+16))
+                             React.createElement('p',null,"nome é: "+nameContext.name+" minha idade é: "+nameContext.age))
 
                         )
                     )
