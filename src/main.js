@@ -71,10 +71,16 @@
 
             function MyComponent4(props){
                 
+                const [seconds, setSeconds] = React.useState(0);
+
+                setTimeout(()=>{
+                    setSeconds(seconds+1)
+                },1000)
+
                 return(
 // JS code run into { }
                         <div className="component-4">
-                            <p>nome é: {props.name} minha idade é: {props.age}</p>
+                            <p>nome é: {props.name} minha idade é: {props.age} - sao: {seconds}</p>
                         </div>
                 )
             }
