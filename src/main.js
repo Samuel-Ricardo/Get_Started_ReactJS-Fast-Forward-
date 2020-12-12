@@ -12,6 +12,10 @@
             // JSX - is a syntax for JS with React similar to HTML
             // JSX - é uma sintaxe para JS com React semelhante ao HTML
 
+            // Composition - send data from parents directly to children, without having to go through another component
+            // Composition - envia dados dos pais diretamente para os filhos, sem ter que passar por outro componente
+
+            // Ex: 1 -> 4
 
             const contextData = React.createContext('name')
 
@@ -20,20 +24,16 @@
 
             function MyComponent1(){
 
-                const myName = 'Ayrton '
-
+                const myName = 'Samuel :)'
+// i dont need to call "MyComponent3"
                 return (
 
-                    <contextData.Provider value = {{
-                        name: myName,
-                        age: 16
-                    }}>
                         <div className="component-1">
                             <MyComponent2>
                                 <p>Paragrafo do componente 2</p>
+                                <MyComponent4 name={myName} age="16"/>
                             </MyComponent2>
                         </div>
-                    </contextData.Provider>
                 ) 
             }
 
@@ -50,7 +50,6 @@
 
                         </footer>
                         </div> 
-                        <MyComponent3/>
                     </div>
                 ) 
             }
@@ -65,20 +64,13 @@
                 )
             }
 
-            function MyComponent4(){
+            function MyComponent4(props){
                 
                 return(
 // JS code run into { }
-                    <contextData.Consumer>
-                        {
-                            (nameContext) =>(
-                                <div className="component-4">
-                                    <p>nome é: {nameContext.name} minha idade é: {nameContext.age}</p>
-                                </div>
-                            )
-                        }
-                    </contextData.Consumer>
-
+                        <div className="component-4">
+                            <p>nome é: {props.name} minha idade é: {props.age}</p>
+                        </div>
                 )
             }
 
