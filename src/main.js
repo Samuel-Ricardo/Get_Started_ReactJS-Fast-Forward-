@@ -19,7 +19,8 @@
             
             // Ex: 1 -> 4
             /////////////////////////////////////////////////////////////////////////////////////////
-            // Rooks -  
+            // Hooks - are functions that let you “hook into” React state and lifecycle features from function components. 
+            // Ganchos - são funções que permitem que você "conecte" o estado React e os recursos de ciclo de vida dos componentes de função.
 
             const contextData = React.createContext('name')
 
