@@ -114,13 +114,30 @@
                 )
             } 
 
-            
+            function MyBrotherComponent2(){
+
+                return (
+
+                    <p>
+                        Contador:
+                    </p>
+                )
+            }
+
+            function MyApp(){
+
+                return(
+                    <React.Fragment>
+                            <my
+                    </React.Fragment>
+                )
+            }
             
             //ReactDOM.render(element, place where it will render the elements)
 
             ReactDOM.render(
 
-                <MyComponent/>,
+                <MyApp/>,
                     document.getElementById('app')
 
             )            
