@@ -126,9 +126,14 @@
 
             function MyApp(){
 
+
+                //React.Fragment - is a React component that can return more than 1 component, not needing a container like a <div> </div>
+                //React.Fragment - é um componente React que pode retornar mais de 1 componente, não precisando de um contêiner como um <div> </div>
+
                 return(
                     <React.Fragment>
-                            <my
+                            <MyComponent/>
+                            <MyBrotherComponent/>
                     </React.Fragment>
                 )
             }
