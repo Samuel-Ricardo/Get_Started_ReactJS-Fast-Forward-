@@ -1,21 +1,25 @@
             //div - app 
 
-            
-            //  One Way data flow - data can only flow in one direction, for "down", of Parent to children  //  Fluxo de dados unilateral - os dados só podem fluir em uma direção, para "baixo", de pai para filho  //
+            /////////////////////////////////////////////////////////////////////////////////////////
+            //  One Way data flow - data can only flow in one direction, for "down", of Parent to children  //
+            //  Fluxo de dados unilateral - os dados só podem fluir em uma direção, para "baixo", de pai para filho  //
 
             // 0 -> 1 -> 2 -> 3 -> 4
 
             // But the React can broke this flow, you can pass properties (params) for the components (functions) of behind (Parents), of children to parents.
 
-            //  Context API - we can break the flow and send data from any parent to any child or the other way around, and we don't need to go through all the parent's components until we reach the final children for example  //  API de contexto - podemos interromper o fluxo e enviar dados de qualquer pai para qualquer filho ou vice-versa, e não precisamos passar por todos os componentes do pai até chegarmos aos filhos finais, por exemplo
-
+            //  Context API - we can break the flow and send data from any parent to any child or the other way around, and we don't need to go through all the parent's components until we reach the final children for example  
+            //  Context API - podemos interromper o fluxo e enviar dados de qualquer pai para qualquer filho ou vice-versa, e não precisamos passar por todos os componentes do pai até chegarmos aos filhos finais, por exemplo
+            /////////////////////////////////////////////////////////////////////////////////////////
             // JSX - is a syntax for JS with React similar to HTML
             // JSX - é uma sintaxe para JS com React semelhante ao HTML
-
+            /////////////////////////////////////////////////////////////////////////////////////////
             // Composition - send data from parents directly to children, without having to go through another component
             // Composition - envia dados dos pais diretamente para os filhos, sem ter que passar por outro componente
-
+            
             // Ex: 1 -> 4
+            /////////////////////////////////////////////////////////////////////////////////////////
+            // Rooks -  
 
             const contextData = React.createContext('name')
 

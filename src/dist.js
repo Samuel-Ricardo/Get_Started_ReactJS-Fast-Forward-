@@ -12,11 +12,12 @@ const contextData = React.createContext('name'); // React.createElement(contextN
 // React.createElement(contextName.Consumer) - Who Consume Data
 
 function MyComponent1() {
-  const myName = 'Ayrton ';
+  const myName = 'Samuel :)'; // i dont need to call "MyComponent3"
+
   return /*#__PURE__*/React.createElement("div", {
     className: "component-1"
   }, /*#__PURE__*/React.createElement(MyComponent2, null, /*#__PURE__*/React.createElement("p", null, "Paragrafo do componente 2"), /*#__PURE__*/React.createElement(MyComponent4, {
-    name: "Samuel",
+    name: myName,
     age: "16"
   })));
 }
