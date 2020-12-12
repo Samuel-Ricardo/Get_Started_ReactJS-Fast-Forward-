@@ -42,12 +42,14 @@
                 return (
 
                     <div className="component-2">
-                        <header>
+                       <div>
+                       <header>
                             {props.children}
                         </header>
                         <footer>
-                            
+
                         </footer>
+                        </div> 
                         <MyComponent3/>
                     </div>
                 ) 

@@ -17,13 +17,13 @@ function MyComponent1() {
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "component-1"
-  }, /*#__PURE__*/React.createElement(MyComponent2, null)));
+  }, /*#__PURE__*/React.createElement(MyComponent2, null, /*#__PURE__*/React.createElement("p", null, "Paragrafo do componente 2"))));
 }
 
-function MyComponent2() {
+function MyComponent2(props) {
   return /*#__PURE__*/React.createElement("div", {
     className: "component-2"
-  }, /*#__PURE__*/React.createElement(MyComponent3, null));
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("header", null, props.children), /*#__PURE__*/React.createElement("footer", null)), /*#__PURE__*/React.createElement(MyComponent3, null));
 }
 
 function MyComponent3() {
