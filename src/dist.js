@@ -24,10 +24,7 @@ function MyComponent1() {
 
   return /*#__PURE__*/React.createElement("div", {
     className: "component-1"
-  }, /*#__PURE__*/React.createElement(MyComponent2, null, /*#__PURE__*/React.createElement("p", null, "Paragrafo do componente 2"), /*#__PURE__*/React.createElement(MyComponent4, {
-    name: myName,
-    age: "16"
-  })));
+  }, /*#__PURE__*/React.createElement(MyComponent2, null, /*#__PURE__*/React.createElement("p", null, "Paragrafo do componente 2"), /*#__PURE__*/React.createElement(MyComponent3, null)));
 }
 
 function MyComponent2(props) {
@@ -37,9 +34,15 @@ function MyComponent2(props) {
 }
 
 function MyComponent3() {
+  const [phone, setPhone] = React.useState("(81) 94002-8922");
+  setTimeout(() => {
+    setPhone("(11) 91234-5678");
+  }, 2000);
   return /*#__PURE__*/React.createElement("div", {
     className: "component-3"
-  }, /*#__PURE__*/React.createElement(MyComponent4, null));
+  }, /*#__PURE__*/React.createElement(MyComponent4, {
+    phone: phone
+  }));
 }
 
 function MyComponent4(props) {
@@ -52,7 +55,7 @@ function MyComponent4(props) {
     // JS code run into { }
     React.createElement("div", {
       className: "component-4"
-    }, /*#__PURE__*/React.createElement("p", null, "nome \xE9: ", props.name, " minha idade \xE9: ", props.age, " - sao: ", seconds))
+    }, /*#__PURE__*/React.createElement("p", null, "nome \xE9: ", props.name, " minha idade \xE9: ", props.age, " - sao: ", seconds, " - Telefone: ", props.phone))
   );
 }
 

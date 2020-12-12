@@ -36,7 +36,7 @@
                         <div className="component-1">
                             <MyComponent2>
                                 <p>Paragrafo do componente 2</p>
-                                <MyComponent4 name={myName} age="16"/>
+                                <MyComponent3/>
                             </MyComponent2>
                         </div>
                 ) 
@@ -61,10 +61,16 @@
 
             function MyComponent3(){
 
+                const [phone, setPhone] = React.useState("(81) 94002-8922")
+
+                setTimeout(()=>{
+                    setPhone("(11) 91234-5678")
+                },2000)
+
                 return (
                 
                     <div className="component-3">
-                        <MyComponent4/>
+                        <MyComponent4 phone={phone}/>
                     </div>
                 )
             }
@@ -80,7 +86,7 @@
                 return(
 // JS code run into { }
                         <div className="component-4">
-                            <p>nome é: {props.name} minha idade é: {props.age} - sao: {seconds}</p>
+                            <p>nome é: {props.name} minha idade é: {props.age} - sao: {seconds} - Telefone: {props.phone}</p>
                         </div>
                 )
             }
