@@ -104,6 +104,17 @@
                     </div>
                 )
             }
+
+            function MyBrotherComponent(){
+
+                return (
+                    <div>
+                        <MyBrotherComponent2/>
+                    </div>                        
+                )
+            } 
+
+            
             
             //ReactDOM.render(element, place where it will render the elements)
 
