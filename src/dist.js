@@ -65,7 +65,21 @@ function MyComponent() {
   return /*#__PURE__*/React.createElement("div", {
     id: "components"
   }, /*#__PURE__*/React.createElement(MyComponent1, null));
+}
+
+function MyBrotherComponent() {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(MyBrotherComponent2, null));
+}
+
+function MyBrotherComponent2() {
+  return /*#__PURE__*/React.createElement("p", null, "Contador:");
+}
+
+function MyApp() {
+  //React.Fragment - is a React component that can return more than 1 component, not needing a container like a <div> </div>
+  //React.Fragment - é um componente React que pode retornar mais de 1 componente, não precisando de um contêiner como um <div> </div>
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(MyComponent, null), /*#__PURE__*/React.createElement(MyBrotherComponent, null));
 } //ReactDOM.render(element, place where it will render the elements)
 
 
-ReactDOM.render( /*#__PURE__*/React.createElement(MyComponent, null), document.getElementById('app'));
+ReactDOM.render( /*#__PURE__*/React.createElement(MyApp, null), document.getElementById('app'));

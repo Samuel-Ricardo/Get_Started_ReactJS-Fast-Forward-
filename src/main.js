@@ -21,6 +21,10 @@
             /////////////////////////////////////////////////////////////////////////////////////////
             // Hooks - are functions that let you “hook into” React state and lifecycle features from function components. 
             // Ganchos - são funções que permitem que você "conecte" o estado React e os recursos de ciclo de vida dos componentes de função.
+            /////////////////////////////////////////////////////////////////////////////////////////
+            //lifting state up - In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it.
+            //elevar o state - No React, o compartilhamento do state é alcançado ao movê-lo para o elemento pai comum aos componentes que precisam dele. Isso se chama. 
+            
 
             const contextData = React.createContext('name')
 
@@ -118,9 +122,9 @@
 
                 return (
 
-                    <p>
+                    <h2>
                         Contador:
-                    </p>
+                    </h2>
                 )
             }
 
