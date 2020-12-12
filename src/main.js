@@ -124,6 +124,18 @@
 
             function MyBrotherComponent2(props){
 
+//                React.useEffect(() => {
+//                    effect
+//                    return () => {
+//                        cleanup
+//                    }
+//                }, [input])
+
+                    React.useEffect(function(){
+
+                        localStorage.setItem('counter', props.counter)
+                    });
+
                 return (
 
                     <h2>
@@ -134,7 +146,7 @@
 
             function MyApp(){
 
-                const [counter, setCounter] = React.useState(0)
+                const [counter, setCounter] = React.useState(parseInt(localStorage.getItem('counter'), 10) || 0)
 
                 const increment = function(){
                     setCounter(counter + 1)
