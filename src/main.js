@@ -109,27 +109,32 @@
                 )
             }
 
-            function MyBrotherComponent(){
+            function MyBrotherComponent(props){
 
                 return (
                     <div>
-                        <MyBrotherComponent2/>
+                        <MyBrotherComponent2 counter = {props.counter}/>
                     </div>                        
                 )
             } 
 
-            function MyBrotherComponent2(){
+            function MyBrotherComponent2(props){
 
                 return (
 
                     <h2>
-                        Contador:
+                        Contador: {props.counter}
                     </h2>
                 )
             }
 
             function MyApp(){
 
+                const [counter, setCounter] = React.useState(0)
+
+                const increment = function(){
+                    setCounter(counter + 1)
+                }
 
                 //React.Fragment - is a React component that can return more than 1 component, not needing a container like a <div> </div>
                 //React.Fragment - é um componente React que pode retornar mais de 1 componente, não precisando de um contêiner como um <div> </div>
@@ -137,7 +142,7 @@
                 return(
                     <React.Fragment>
                             <MyComponent/>
-                            <MyBrotherComponent/>
+                            <MyBrotherComponent  counter={counter}/>
                     </React.Fragment>
                 )
             }
