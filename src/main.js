@@ -31,7 +31,7 @@
             // React.createElement(contextName.Provider) - Who Provide Data
             // React.createElement(contextName.Consumer) - Who Consume Data
 
-            function MyComponent1(){
+            function MyComponent1(props){
 
                 const myName = 'Samuel :)'
 // i dont need to call "MyComponent3"
@@ -40,7 +40,7 @@
                         <div className="component-1">
                             <MyComponent2>
                                 <p>Paragrafo do componente 2</p>
-                                <MyComponent3/>
+                                <MyComponent3 incrementOnClik={props.incrementOnClik}/>
                             </MyComponent2>
                         </div>
                 ) 
@@ -63,7 +63,7 @@
                 ) 
             }
 
-            function MyComponent3(){
+            function MyComponent3(props){
 
                 const [phone, setPhone] = React.useState("(81) 94002-8922")
 
@@ -74,7 +74,7 @@
                 return (
                 
                     <div className="component-3">
-                        <MyComponent4 phone={phone}/>
+                        <MyComponent4 phone={phone} incrementOnClik={props.incrementOnClik}/>
                     </div>
                 )
             }
@@ -91,11 +91,15 @@
 // JS code run into { }
                         <div className="component-4">
                             <p>nome é: {props.name} minha idade é: {props.age} - sao: {seconds} - Telefone: {props.phone}</p>
+
+                            <footer>
+                                <button type="button" onClick={props.incrementOnClik}>Incrementar</button>
+                            </footer>
                         </div>
                 )
             }
 
-            function MyComponent(){
+            function MyComponent(props){
 
                 //React.createElement(element // function name, {Properties}, Children)
 
@@ -104,7 +108,7 @@
                 return(
 
                     <div id="components">
-                        <MyComponent1/>
+                        <MyComponent1 incrementOnClik={props.incrementOnClik}/>
                     </div>
                 )
             }
@@ -141,7 +145,7 @@
 
                 return(
                     <React.Fragment>
-                            <MyComponent/>
+                            <MyComponent incrementOnClik={increment}/>
                             <MyBrotherComponent  counter={counter}/>
                     </React.Fragment>
                 )

@@ -16,15 +16,20 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Hooks - are functions that let you “hook into” React state and lifecycle features from function components. 
 // Ganchos - são funções que permitem que você "conecte" o estado React e os recursos de ciclo de vida dos componentes de função.
+/////////////////////////////////////////////////////////////////////////////////////////
+//lifting state up - In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it.
+//elevar o state - No React, o compartilhamento do state é alcançado ao movê-lo para o elemento pai comum aos componentes que precisam dele. Isso se chama. 
 const contextData = React.createContext('name'); // React.createElement(contextName.Provider) - Who Provide Data
 // React.createElement(contextName.Consumer) - Who Consume Data
 
-function MyComponent1() {
+function MyComponent1(props) {
   const myName = 'Samuel :)'; // i dont need to call "MyComponent3"
 
   return /*#__PURE__*/React.createElement("div", {
     className: "component-1"
-  }, /*#__PURE__*/React.createElement(MyComponent2, null, /*#__PURE__*/React.createElement("p", null, "Paragrafo do componente 2"), /*#__PURE__*/React.createElement(MyComponent3, null)));
+  }, /*#__PURE__*/React.createElement(MyComponent2, null, /*#__PURE__*/React.createElement("p", null, "Paragrafo do componente 2"), /*#__PURE__*/React.createElement(MyComponent3, {
+    incrementOnClik: props.incrementOnClik
+  })));
 }
 
 function MyComponent2(props) {
@@ -33,7 +38,7 @@ function MyComponent2(props) {
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("header", null, props.children), /*#__PURE__*/React.createElement("footer", null)));
 }
 
-function MyComponent3() {
+function MyComponent3(props) {
   const [phone, setPhone] = React.useState("(81) 94002-8922");
   setTimeout(() => {
     setPhone("(11) 91234-5678");
@@ -41,7 +46,8 @@ function MyComponent3() {
   return /*#__PURE__*/React.createElement("div", {
     className: "component-3"
   }, /*#__PURE__*/React.createElement(MyComponent4, {
-    phone: phone
+    phone: phone,
+    incrementOnClik: props.incrementOnClik
   }));
 }
 
@@ -55,30 +61,47 @@ function MyComponent4(props) {
     // JS code run into { }
     React.createElement("div", {
       className: "component-4"
-    }, /*#__PURE__*/React.createElement("p", null, "nome \xE9: ", props.name, " minha idade \xE9: ", props.age, " - sao: ", seconds, " - Telefone: ", props.phone))
+    }, /*#__PURE__*/React.createElement("p", null, "nome \xE9: ", props.name, " minha idade \xE9: ", props.age, " - sao: ", seconds, " - Telefone: ", props.phone), /*#__PURE__*/React.createElement("footer", null, /*#__PURE__*/React.createElement("button", {
+      type: "button",
+      onClick: props.incrementOnClik
+    }, "Incrementar")))
   );
 }
 
-function MyComponent() {
+function MyComponent(props) {
   //React.createElement(element // function name, {Properties}, Children)
   //return React.createElement('div',null,'Hello world!!!')
   return /*#__PURE__*/React.createElement("div", {
     id: "components"
-  }, /*#__PURE__*/React.createElement(MyComponent1, null));
+  }, /*#__PURE__*/React.createElement(MyComponent1, {
+    incrementOnClik: props.incrementOnClik
+  }));
 }
 
-function MyBrotherComponent() {
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(MyBrotherComponent2, null));
+function MyBrotherComponent(props) {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(MyBrotherComponent2, {
+    counter: props.counter
+  }));
 }
 
-function MyBrotherComponent2() {
-  return /*#__PURE__*/React.createElement("p", null, "Contador:");
+function MyBrotherComponent2(props) {
+  return /*#__PURE__*/React.createElement("h2", null, "Contador: ", props.counter);
 }
 
 function MyApp() {
-  //React.Fragment - is a React component that can return more than 1 component, not needing a container like a <div> </div>
+  const [counter, setCounter] = React.useState(0);
+
+  const increment = function () {
+    setCounter(counter + 1);
+  }; //React.Fragment - is a React component that can return more than 1 component, not needing a container like a <div> </div>
   //React.Fragment - é um componente React que pode retornar mais de 1 componente, não precisando de um contêiner como um <div> </div>
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(MyComponent, null), /*#__PURE__*/React.createElement(MyBrotherComponent, null));
+
+
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(MyComponent, {
+    incrementOnClik: increment
+  }), /*#__PURE__*/React.createElement(MyBrotherComponent, {
+    counter: counter
+  }));
 } //ReactDOM.render(element, place where it will render the elements)
 
 
